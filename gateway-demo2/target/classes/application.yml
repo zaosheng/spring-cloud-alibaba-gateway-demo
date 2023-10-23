@@ -1,0 +1,27 @@
+server:
+    port: 8114
+spring:
+    application:
+        name: newbee-cloud-gateway-service
+    cloud:
+        gateway:
+            discovery:
+                locator:
+                    enabled: true
+                    lower-case-service-id: true
+            routes:
+            -   id: goods-service-route
+                order: 1
+                predicates:
+                - Path=/goods/**
+                uri: lb://newbee-cloud-goods-service
+            -   id: shopcart-service-route
+                order: 1
+                predicates:
+                - Path=/shop-cart/**
+                uri: lb://newbee-cloud-shopcart-service
+        nacos:
+            discovery:
+                server-addr: 127.0.0.1:8848
+            password: nacos
+            username: nacos

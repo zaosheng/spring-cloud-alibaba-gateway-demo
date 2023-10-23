@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gateway-demo" />
+        <module name="shopcart-service-demo" />
+        <module name="gateway-demo2" />
+        <module name="goods-service-demo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gateway-demo" target="8" />
+      <module name="gateway-demo2" target="8" />
+      <module name="goods-service-demo" target="8" />
+      <module name="shopcart-service-demo" target="8" />
+      <module name="spring-cloud-alibaba-gateway-demo" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

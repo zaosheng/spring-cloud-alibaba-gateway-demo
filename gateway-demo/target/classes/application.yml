@@ -1,0 +1,22 @@
+server:
+    port: 8123
+spring:
+    cloud:
+        gateway:
+            routes:
+            -   id: goods-demo-route
+                uri: http://localhost:8120
+                order: 1
+                predicates:
+                - Path=/resourceManager/goods/**
+                - Method=GET
+                filters: # 过滤器，请求在传递过程中可以通过过滤器对其进行一定的修改
+                    - StripPrefix=1 # 去掉第一个路径
+            -   id: shopcart-demo-route
+                uri: http://localhost:8122
+                order: 1
+                predicates:
+                - Path=/resourceManager/shop-cart/**
+logging:
+    level:
+        org.springframework.cloud.gateway: info
